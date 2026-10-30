@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8F5EF;
+    color: #25483B;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F5EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BDCFBA;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8FA88B;
+}
+
+/* Print Styles for Digital Registration Pass */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-registration-pass, #printable-registration-pass * {
+    visibility: visible;
+  }
+  #printable-registration-pass {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 24px;
+    box-shadow: none !important;
+    border: 2px dashed #25483B;
+    background: #FFFFFF !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
